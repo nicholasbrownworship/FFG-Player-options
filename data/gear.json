@@ -3,13 +3,19 @@
     "id": "blaster_pistol",
     "name": "Blaster Pistol",
     "subtitle": "",
-    "type": "Weapon",                 // used by Gear Type sub-filter
+    "type": "Weapon",
     "tags": ["ranged", "blaster"],
-    "source": { "book": "EotE Core Rulebook", "page": 0 },
-    "summary": "Basic sidearm description in your words.",
+    "source": {
+      "book": "EotE Core Rulebook",
+      "page": 0
+    },
+    "summary": "Basic sidearm used throughout the galaxy.",
     "mechanics": {
       "blocks": [
-        { "label": "Profile", "text": "Damage, crit, range, and specials." }
+        {
+          "label": "Profile",
+          "text": "Damage, crit, range, and special qualities in your own words."
+        }
       ]
     },
     "notes": "",
