@@ -2,19 +2,21 @@
   {
     "id": "scoundrel_spec",
     "name": "Scoundrel",
-    "subtitle": "Template specialization entry",
+    "subtitle": "Specialization template entry",
     "type": "Specialization",
-    "career": "Smuggler",           // used for “Career” sub-filter
+    "career": "Smuggler",
     "tags": ["specialization"],
-    "source": { "book": "EotE Core Rulebook", "page": 0 },
-    "summary": "Your specialization overview.",
+    "source": {
+      "book": "EotE Core Rulebook",
+      "page": 0
+    },
+    "summary": "Describe the specialization's flavor and niche.",
     "mechanics": {
-      "text": "General notes about its talent tree, in your words."
+      "text": "You can briefly summarize the talent tree or key mechanics here."
     },
     "notes": "",
     "meta": {
       "System": "Edge of the Empire"
-      // you can add “Tree Shape”, “Starting Talents”, etc. if useful
     }
   }
 ]
