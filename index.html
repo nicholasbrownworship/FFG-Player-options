@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Star Wars FFG Player Options Database</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-mark">SW</div>
+      <div class="brand-text">
+        <h1>FFG Player Options Codex</h1>
+        <p>Personal reference for Edge of the Empire, Age of Rebellion, Force and Destiny & supplements</p>
+      </div>
+    </div>
+    <nav class="nav-tabs">
+      <button class="nav-tab active" data-section="species">Species</button>
+      <button class="nav-tab" data-section="careers">Careers</button>
+      <button class="nav-tab" data-section="specializations">Specializations</button>
+      <button class="nav-tab" data-section="talents">Talents</button>
+      <button class="nav-tab" data-section="gear">Gear</button>
+      <button class="nav-tab" data-section="force_powers">Force Powers</button>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="sidebar">
+      <div class="search-box">
+        <label for="searchInput">Search</label>
+        <input id="searchInput" type="search" placeholder="Search name, tags, source…" />
+      </div>
+
+      <div class="filters">
+        <div class="filter-group">
+          <label for="sourceFilter">Source book</label>
+          <select id="sourceFilter">
+            <option value="">All sources</option>
+            <!-- Populated dynamically based on data -->
+          </select>
+        </div>
+
+        <div class="filter-group" id="subFilterContainer">
+          <!-- Example: for careers, a 'Career Type' or 'Category' filter -->
+        </div>
+      </div>
+
+      <div class="list-container">
+        <ul id="itemList" class="item-list"></ul>
+      </div>
+    </section>
+
+    <section class="detail">
+      <div id="detailPlaceholder" class="detail-placeholder">
+        <h2>Welcome to your FFG Codex</h2>
+        <p>
+          Pick a category above, then select an entry on the left to see its details.
+          All rules text and numbers are entered by hand from books that I personally own.
+        </p>
+        <p class="hint">
+          Tip: You can keep this open on a second monitor while you GM or play.
+        </p>
+      </div>
+
+      <article id="detailView" class="detail-card hidden">
+        <header class="detail-header">
+          <h2 id="detailName"></h2>
+          <p id="detailSubtitle" class="detail-subtitle"></p>
+          <p id="detailSource" class="detail-source"></p>
+          <div id="detailTags" class="detail-tags"></div>
+        </header>
+
+        <section class="detail-section" id="detailSummarySection">
+          <h3>Summary</h3>
+          <p id="detailSummary"></p>
+        </section>
+
+        <section class="detail-section" id="detailMechanicsSection">
+          <h3>Mechanics</h3>
+          <div id="detailMechanics"></div>
+        </section>
+
+        <section class="detail-section" id="detailNotesSection">
+          <h3>Notes</h3>
+          <p id="detailNotes"></p>
+        </section>
+
+        <section class="detail-section" id="detailMetaSection">
+          <h3>Meta / Tags</h3>
+          <dl class="meta-grid" id="detailMetaGrid"></dl>
+        </section>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      Personal reference site for a home game. All rules content must be manually transcribed
+      from legally owned books. This project is not affiliated with Fantasy Flight Games, Edge Studios, or Disney.
+    </p>
+  </footer>
+</body>
+</html>
