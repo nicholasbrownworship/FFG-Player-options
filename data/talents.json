@@ -4,12 +4,15 @@
     "name": "Quick Draw",
     "subtitle": "",
     "type": "Talent",
-    "tier": 1,                        // used for the “Tier” sub-filter
-    "tags": ["ranked?: no"],
-    "source": { "book": "EotE Core Rulebook", "page": 0 },
-    "summary": "Short explanation of what this talent is about.",
+    "tier": 1,
+    "tags": ["template"],
+    "source": {
+      "book": "EotE Core Rulebook",
+      "page": 0
+    },
+    "summary": "Short description of what the talent represents.",
     "mechanics": {
-      "text": "Write the actual rules in your own words."
+      "text": "Write the actual talent rules here in your own words."
     },
     "notes": "",
     "meta": {
