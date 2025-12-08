@@ -2,12 +2,15 @@
   {
     "id": "smuggler",
     "name": "Smuggler",
-    "subtitle": "Template – replace with your wording",
+    "subtitle": "Career template entry",
     "type": "Career",
-    "category": "Fringer / Scoundrel / etc.",   // YOU decide naming here
+    "category": "Fringer / Scoundrel / etc.",
     "tags": ["career"],
-    "source": { "book": "EotE Core Rulebook", "page": 0 },
-    "summary": "High-level description in your own words.",
+    "source": {
+      "book": "EotE Core Rulebook",
+      "page": 0
+    },
+    "summary": "High-level description of what this career is about.",
     "mechanics": {
       "blocks": [
         {
@@ -16,14 +19,14 @@
         },
         {
           "label": "Specializations",
-          "text": "List the associated specs by name."
+          "text": "List the linked specializations here."
         }
       ]
     },
     "notes": "",
     "meta": {
       "System": "Edge of the Empire",
-      "Role": "Scoundrel / Face / Pilot (etc.)"
+      "Role": "Scoundrel / Pilot / Face"
     }
   }
 ]
