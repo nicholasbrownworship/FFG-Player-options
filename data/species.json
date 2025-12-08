@@ -1,0 +1,23 @@
+[
+  {
+    "id": "human_placeholder",
+    "name": "Human (Placeholder)",
+    "subtitle": "Baseline Template Species",
+    "type": "Species",
+    "tags": ["baseline", "versatile"],
+    "source": {
+      "book": "Core Book (Your Choice)",
+      "page": 0
+    },
+    "summary": "Use this entry as a template when transcribing species rules from your books.",
+    "mechanics": {
+      "text": "Paste the species' starting characteristics, XP, and abilities here in your own words from the book."
+    },
+    "notes": "You own the rules; this site is just organizing what you typed in.",
+    "meta": {
+      "Starting XP": "",
+      "Wound Threshold": "",
+      "Strain Threshold": ""
+    }
+  }
+]
