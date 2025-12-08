@@ -2,16 +2,25 @@
   {
     "id": "move_power",
     "name": "Move",
-    "subtitle": "Template Force power entry",
+    "subtitle": "Telekinetic Force power",
     "type": "Force Power",
-    "powerType": "Move",               // used by the sub-filter if desired
+    "powerType": "Move",
     "tags": ["force", "telekinesis"],
-    "source": { "book": "FaD Core Rulebook", "page": 0 },
-    "summary": "Overview of what the power does.",
+    "source": {
+      "book": "FaD Core Rulebook",
+      "page": 0
+    },
+    "summary": "Template entry for a Force power.",
     "mechanics": {
       "blocks": [
-        { "label": "Basic Power", "text": "Its base effect in your words." },
-        { "label": "Upgrades", "text": "Brief list or summary of upgrades." }
+        {
+          "label": "Basic Power",
+          "text": "Describe the base effect in your words."
+        },
+        {
+          "label": "Upgrades",
+          "text": "Summarize the kinds of upgrades this power offers."
+        }
       ]
     },
     "notes": "",
