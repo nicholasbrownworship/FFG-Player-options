@@ -1,26 +1,22 @@
-{
-  "id": "unique_id",
-  "name": "Display Name",
-  "subtitle": "Short descriptor",
-  "type": "Species / Talent / Gear / etc.",
-  "career": "If relevant (for specializations, etc.)",
-  "category": "Optional grouping field",
-  "tags": ["tag1", "tag2"],
-  "source": { "book": "Book Name", "page": 123 },
-  "summary": "High-level description.",
-  "mechanics": {
-    "text": "Your manually typed rules text or summary, in your own words."
-  },
-  "notes": "Anything table-specific.",
-  "meta": {
-    "Tier": "for talents",
-    "XP Cost": "for talents, specs",
-    "Rarity": "for gear",
-    "Encumbrance": "for gear",
-    "Damage": "",
-    "Crit": "",
-    "Range": "",
-    "Special": ""
+[
+  {
+    "id": "move_power",
+    "name": "Move",
+    "subtitle": "Template Force power entry",
+    "type": "Force Power",
+    "powerType": "Move",               // used by the sub-filter if desired
+    "tags": ["force", "telekinesis"],
+    "source": { "book": "FaD Core Rulebook", "page": 0 },
+    "summary": "Overview of what the power does.",
+    "mechanics": {
+      "blocks": [
+        { "label": "Basic Power", "text": "Its base effect in your words." },
+        { "label": "Upgrades", "text": "Brief list or summary of upgrades." }
+      ]
+    },
+    "notes": "",
+    "meta": {
+      "System": "Force and Destiny"
+    }
   }
-}
-
+]
