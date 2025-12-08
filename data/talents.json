@@ -1,25 +1,22 @@
-{
-  "id": "unique_id",
-  "name": "Display Name",
-  "subtitle": "Short descriptor",
-  "type": "Species / Talent / Gear / etc.",
-  "career": "If relevant (for specializations, etc.)",
-  "category": "Optional grouping field",
-  "tags": ["tag1", "tag2"],
-  "source": { "book": "Book Name", "page": 123 },
-  "summary": "High-level description.",
-  "mechanics": {
-    "text": "Your manually typed rules text or summary, in your own words."
-  },
-  "notes": "Anything table-specific.",
-  "meta": {
-    "Tier": "for talents",
-    "XP Cost": "for talents, specs",
-    "Rarity": "for gear",
-    "Encumbrance": "for gear",
-    "Damage": "",
-    "Crit": "",
-    "Range": "",
-    "Special": ""
+[
+  {
+    "id": "quick_draw",
+    "name": "Quick Draw",
+    "subtitle": "",
+    "type": "Talent",
+    "tier": 1,                        // used for the “Tier” sub-filter
+    "tags": ["ranked?: no"],
+    "source": { "book": "EotE Core Rulebook", "page": 0 },
+    "summary": "Short explanation of what this talent is about.",
+    "mechanics": {
+      "text": "Write the actual rules in your own words."
+    },
+    "notes": "",
+    "meta": {
+      "Tier": 1,
+      "XP Cost": 5,
+      "Ranked": "No",
+      "System": "Edge of the Empire"
+    }
   }
-}
+]
