@@ -1,26 +1,27 @@
-{
-  "id": "unique_id",
-  "name": "Display Name",
-  "subtitle": "Short descriptor",
-  "type": "Species / Talent / Gear / etc.",
-  "career": "If relevant (for specializations, etc.)",
-  "category": "Optional grouping field",
-  "tags": ["tag1", "tag2"],
-  "source": { "book": "Book Name", "page": 123 },
-  "summary": "High-level description.",
-  "mechanics": {
-    "text": "Your manually typed rules text or summary, in your own words."
-  },
-  "notes": "Anything table-specific.",
-  "meta": {
-    "Tier": "for talents",
-    "XP Cost": "for talents, specs",
-    "Rarity": "for gear",
-    "Encumbrance": "for gear",
-    "Damage": "",
-    "Crit": "",
-    "Range": "",
-    "Special": ""
+[
+  {
+    "id": "blaster_pistol",
+    "name": "Blaster Pistol",
+    "subtitle": "",
+    "type": "Weapon",                 // used by Gear Type sub-filter
+    "tags": ["ranged", "blaster"],
+    "source": { "book": "EotE Core Rulebook", "page": 0 },
+    "summary": "Basic sidearm description in your words.",
+    "mechanics": {
+      "blocks": [
+        { "label": "Profile", "text": "Damage, crit, range, and specials." }
+      ]
+    },
+    "notes": "",
+    "meta": {
+      "Damage": "",
+      "Crit": "",
+      "Range": "",
+      "Hard Points": "",
+      "Encumbrance": "",
+      "Rarity": "",
+      "Price": "",
+      "System": "Edge of the Empire"
+    }
   }
-}
-
+]
