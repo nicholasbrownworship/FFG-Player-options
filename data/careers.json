@@ -1,31 +1,29 @@
 [
   {
-    "id": "career_placeholder",
-    "name": "Career Template",
-    "subtitle": "Use as a template for a real career",
-    "category": "Example Category",
+    "id": "smuggler",
+    "name": "Smuggler",
+    "subtitle": "Template – replace with your wording",
+    "type": "Career",
+    "category": "Fringer / Scoundrel / etc.",   // YOU decide naming here
     "tags": ["career"],
-    "source": {
-      "book": "Core Book (Your Choice)",
-      "page": 0
-    },
-    "summary": "Describe the career's general theme and role in the party.",
+    "source": { "book": "EotE Core Rulebook", "page": 0 },
+    "summary": "High-level description in your own words.",
     "mechanics": {
       "blocks": [
         {
           "label": "Career Skills",
-          "text": "Type the list of career skills in your own words."
+          "text": "List the career skills in your own words."
         },
         {
           "label": "Specializations",
-          "text": "List the linked specializations by name."
+          "text": "List the associated specs by name."
         }
       ]
     },
-    "notes": "You can also add house rules or table notes here (e.g., how this interacts with your campaign).",
+    "notes": "",
     "meta": {
-      "System": "Edge / Age / Force & Destiny",
-      "Recommended Roles": "Pilot, Face, etc."
+      "System": "Edge of the Empire",
+      "Role": "Scoundrel / Face / Pilot (etc.)"
     }
   }
 ]
