@@ -1,26 +1,20 @@
-{
-  "id": "unique_id",
-  "name": "Display Name",
-  "subtitle": "Short descriptor",
-  "type": "Species / Talent / Gear / etc.",
-  "career": "If relevant (for specializations, etc.)",
-  "category": "Optional grouping field",
-  "tags": ["tag1", "tag2"],
-  "source": { "book": "Book Name", "page": 123 },
-  "summary": "High-level description.",
-  "mechanics": {
-    "text": "Your manually typed rules text or summary, in your own words."
-  },
-  "notes": "Anything table-specific.",
-  "meta": {
-    "Tier": "for talents",
-    "XP Cost": "for talents, specs",
-    "Rarity": "for gear",
-    "Encumbrance": "for gear",
-    "Damage": "",
-    "Crit": "",
-    "Range": "",
-    "Special": ""
+[
+  {
+    "id": "scoundrel_spec",
+    "name": "Scoundrel",
+    "subtitle": "Template specialization entry",
+    "type": "Specialization",
+    "career": "Smuggler",           // used for “Career” sub-filter
+    "tags": ["specialization"],
+    "source": { "book": "EotE Core Rulebook", "page": 0 },
+    "summary": "Your specialization overview.",
+    "mechanics": {
+      "text": "General notes about its talent tree, in your words."
+    },
+    "notes": "",
+    "meta": {
+      "System": "Edge of the Empire"
+      // you can add “Tree Shape”, “Starting Talents”, etc. if useful
+    }
   }
-}
-
+]
