@@ -12,11 +12,22 @@
     },
     "summary": "Describe the specialization's flavor and niche.",
     "mechanics": {
-      "text": "You can briefly summarize the talent tree or key mechanics here."
+      "blocks": [
+        {
+          "label": "Talent Tree (by row)",
+          "text": "Row 1: toughened, grit, —, —; Row 2: quick_draw, rapid_reaction, etc."
+        },
+        {
+          "label": "Key Talents",
+          "text": "List a few important talents and what they do in your words."
+        }
+      ]
     },
     "notes": "",
     "meta": {
-      "System": "Edge of the Empire"
+      "System": "Edge of the Empire",
+      "Tree Width": 4,
+      "Tree Height": 5
     }
   }
 ]
