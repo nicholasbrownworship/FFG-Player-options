@@ -1,24 +1,25 @@
 [
   {
-    "id": "quick_draw",
-    "name": "Quick Draw",
+    "id": "toughened",
+    "name": "Toughened",
     "subtitle": "",
     "type": "Talent",
-    "tier": 1,
-    "tags": ["template"],
+    "tier": 2,
+    "tags": ["defense"],
     "source": {
       "book": "EotE Core Rulebook",
       "page": 0
     },
-    "summary": "Short description of what the talent represents.",
+    "summary": "Short description of what this talent represents.",
     "mechanics": {
-      "text": "Write the actual talent rules here in your own words."
+      "text": "Write the rules text for this talent in your own words."
     },
     "notes": "",
     "meta": {
-      "Tier": 1,
-      "XP Cost": 5,
-      "Ranked": "No",
+      "Tier": 2,
+      "XP Cost": 10,
+      "Ranked": true,
+      "Max Ranks": 2,
       "System": "Edge of the Empire"
     }
   }
