@@ -13,7 +13,7 @@
       <div class="brand-mark">SW</div>
       <div class="brand-text">
         <h1>FFG Player Options Codex</h1>
-        <p>Personal reference for Edge of the Empire, Age of Rebellion, Force and Destiny & supplements</p>
+        <p>Personal reference for Edge of the Empire, Age of Rebellion, Force and Destiny &amp; supplements</p>
       </div>
     </div>
     <nav class="nav-tabs">
@@ -27,10 +27,15 @@
   </header>
 
   <main class="layout">
+    <!-- LEFT: search, filters, list -->
     <section class="sidebar">
       <div class="search-box">
         <label for="searchInput">Search</label>
-        <input id="searchInput" type="search" placeholder="Search name, tags, source…" />
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search name, tags, source…"
+        />
       </div>
 
       <div class="filters">
@@ -43,7 +48,7 @@
         </div>
 
         <div class="filter-group" id="subFilterContainer">
-          <!-- Example: for careers, a 'Career Type' or 'Category' filter -->
+          <!-- Populated dynamically per section (Career, Tier, Gear Type, etc.) -->
         </div>
       </div>
 
@@ -52,6 +57,7 @@
       </div>
     </section>
 
+    <!-- RIGHT: detail pane -->
     <section class="detail">
       <div id="detailPlaceholder" class="detail-placeholder">
         <h2>Welcome to your FFG Codex</h2>
@@ -72,21 +78,31 @@
           <div id="detailTags" class="detail-tags"></div>
         </header>
 
+        <!-- Summary -->
         <section class="detail-section" id="detailSummarySection">
           <h3>Summary</h3>
           <p id="detailSummary"></p>
         </section>
 
+        <!-- Talent Tree (used for Specializations, hidden otherwise) -->
+        <section class="detail-section" id="detailTreeSection">
+          <h3>Talent Tree</h3>
+          <div id="talentTree" class="talent-tree"></div>
+        </section>
+
+        <!-- Mechanics -->
         <section class="detail-section" id="detailMechanicsSection">
           <h3>Mechanics</h3>
           <div id="detailMechanics"></div>
         </section>
 
+        <!-- Notes -->
         <section class="detail-section" id="detailNotesSection">
           <h3>Notes</h3>
           <p id="detailNotes"></p>
         </section>
 
+        <!-- Meta / Tags -->
         <section class="detail-section" id="detailMetaSection">
           <h3>Meta / Tags</h3>
           <dl class="meta-grid" id="detailMetaGrid"></dl>
@@ -98,7 +114,8 @@
   <footer class="site-footer">
     <p>
       Personal reference site for a home game. All rules content must be manually transcribed
-      from legally owned books. This project is not affiliated with Fantasy Flight Games, Edge Studios, or Disney.
+      from legally owned books. This project is not affiliated with Fantasy Flight Games,
+      Edge Studios, or Disney.
     </p>
   </footer>
 </body>
