@@ -2,25 +2,34 @@
   {
     "id": "toughened",
     "name": "Toughened",
-    "subtitle": "",
-    "type": "Talent",
     "tier": 2,
     "tags": ["defense"],
-    "source": {
-      "book": "EotE Core Rulebook",
-      "page": 0
-    },
-    "summary": "Short description of what this talent represents.",
-    "mechanics": {
-      "text": "Write the rules text for this talent in your own words."
-    },
+    "source": { "book": "EotE Core Rulebook", "page": 0 },
+    "summary": "Represents increased physical resilience.",
+    "mechanics": { "text": "Write the rules in your words here." },
     "notes": "",
     "meta": {
       "Tier": 2,
       "XP Cost": 10,
       "Ranked": true,
-      "Max Ranks": 2,
-      "System": "Edge of the Empire"
+      "Max Ranks": 2
+    }
+  },
+  {
+    "id": "grit",
+    "name": "Grit",
+    "tier": 1,
+    "tags": [],
+    "source": { "book": "EotE Core Rulebook", "page": 0 },
+    "summary": "",
+    "mechanics": { "text": "" },
+    "notes": "",
+    "meta": {
+      "Tier": 1,
+      "XP Cost": 5,
+      "Ranked": true,
+      "Max Ranks": 3
     }
   }
+
 ]
