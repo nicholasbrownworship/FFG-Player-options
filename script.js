@@ -26,9 +26,12 @@ const SECTIONS = {
 };
 
 let currentSectionKey = "species";
-let dataCache = {}; // { sectionKey: [items] }
+let dataCache = {};          // { sectionKey: [items] }
 let currentItems = [];
 let activeItemId = null;
+
+// Talent index for specialization trees
+let talentIndex = {};
 
 const navTabs = document.querySelectorAll(".nav-tab");
 const searchInput = document.getElementById("searchInput");
@@ -47,7 +50,12 @@ const detailMechanics = document.getElementById("detailMechanics");
 const detailNotes = document.getElementById("detailNotes");
 const detailMetaGrid = document.getElementById("detailMetaGrid");
 
-// Utility to load JSON with basic caching
+// Talent tree section
+const detailTreeSection = document.getElementById("detailTreeSection");
+const talentTreeContainer = document.getElementById("talentTree");
+
+// -------- Data loading --------
+
 async function loadSectionData(sectionKey) {
   if (dataCache[sectionKey]) return dataCache[sectionKey];
 
@@ -71,7 +79,8 @@ function normalize(str) {
   return (str || "").toString().toLowerCase();
 }
 
-// Build source filter options
+// -------- Filters --------
+
 function buildSourceFilter(items) {
   const sources = Array.from(
     new Set(
@@ -90,7 +99,6 @@ function buildSourceFilter(items) {
   }
 }
 
-// Example: optional extra filter (e.g., by type, career group)
 function buildSubFilter(items, sectionKey) {
   subFilterContainer.innerHTML = "";
 
@@ -144,7 +152,6 @@ function buildSubFilter(items, sectionKey) {
   subFilterContainer.appendChild(wrapper);
 }
 
-// Filter + render list
 function applyFilters() {
   const q = normalize(searchInput.value);
   const sourceValue = sourceFilter.value;
@@ -152,7 +159,6 @@ function applyFilters() {
   const subValue = subSelect ? subSelect.value : "";
 
   const filtered = currentItems.filter((item) => {
-    // search
     const haystack =
       `${item.name || ""} ${item.subtitle || ""} ${(item.tags || []).join(" ")} ${item.type || ""} ${
         item.category || ""
@@ -162,10 +168,8 @@ function applyFilters() {
 
     if (q && !normalize(haystack).includes(q)) return false;
 
-    // source
     if (sourceValue && (!item.source || item.source.book !== sourceValue)) return false;
 
-    // extra filter
     if (subValue) {
       let field = null;
       if (currentSectionKey === "careers") field = item.category;
@@ -183,7 +187,8 @@ function applyFilters() {
   renderList(filtered);
 }
 
-// Render list
+// -------- List rendering --------
+
 function renderList(items) {
   itemList.innerHTML = "";
 
@@ -255,7 +260,66 @@ function renderList(items) {
   }
 }
 
-// Show detail of one item
+// -------- Talent tree rendering --------
+
+function renderTalentTree(item) {
+  if (!detailTreeSection || !talentTreeContainer) return;
+
+  // Only show tree for specializations that define a talentGrid
+  const grid =
+    currentSectionKey === "specializations" && Array.isArray(item.talentGrid)
+      ? item.talentGrid
+      : null;
+
+  if (!grid || !grid.length) {
+    detailTreeSection.classList.add("hidden");
+    talentTreeContainer.innerHTML = "";
+    return;
+  }
+
+  detailTreeSection.classList.remove("hidden");
+  talentTreeContainer.innerHTML = "";
+
+  const cols = grid[0] ? grid[0].length : 4;
+  talentTreeContainer.style.gridTemplateColumns = `repeat(${cols}, minmax(0, 1fr))`;
+
+  grid.forEach((row) => {
+    row.forEach((cellId) => {
+      const node = document.createElement("div");
+
+      if (!cellId) {
+        node.className = "talent-node talent-node-empty";
+        talentTreeContainer.appendChild(node);
+        return;
+      }
+
+      node.className = "talent-node";
+
+      const talent = talentIndex[cellId];
+
+      const nameEl = document.createElement("div");
+      nameEl.className = "talent-node-name";
+      nameEl.textContent = talent?.name || cellId;
+
+      const tier = talent?.meta?.Tier ?? talent?.tier;
+      const tierEl = document.createElement("div");
+      tierEl.className = "talent-node-tier";
+      tierEl.textContent = tier ? `Tier ${tier}` : "";
+
+      node.appendChild(nameEl);
+      if (tierEl.textContent) node.appendChild(tierEl);
+
+      if (talent && talent.mechanics && talent.mechanics.text) {
+        node.title = talent.mechanics.text;
+      }
+
+      talentTreeContainer.appendChild(node);
+    });
+  });
+}
+
+// -------- Detail rendering --------
+
 function showDetail(item) {
   detailPlaceholder.classList.add("hidden");
   detailView.classList.remove("hidden");
@@ -293,10 +357,17 @@ function showDetail(item) {
     .getElementById("detailSummarySection")
     .classList.toggle("hidden", !item.summary);
 
-  // Mechanics (you will paste rules text / dice pool info here manually)
+  // Talent tree (specializations only)
+  renderTalentTree(item);
+
+  // Mechanics
   detailMechanics.innerHTML = "";
-  if (item.mechanics && Array.isArray(item.mechanics.blocks)) {
-    item.mechanics.blocks.forEach((block) => {
+  const mech = item.mechanics || {};
+  const hasBlocks = Array.isArray(mech.blocks) && mech.blocks.length > 0;
+  const hasText = !!mech.text;
+
+  if (hasBlocks) {
+    mech.blocks.forEach((block) => {
       const div = document.createElement("div");
       if (block.label) {
         const strong = document.createElement("strong");
@@ -308,17 +379,15 @@ function showDetail(item) {
       div.appendChild(span);
       detailMechanics.appendChild(div);
     });
-  } else if (item.mechanics && item.mechanics.text) {
+  } else if (hasText) {
     const div = document.createElement("div");
-    div.textContent = item.mechanics.text;
+    div.textContent = mech.text;
     detailMechanics.appendChild(div);
   }
+
   document
     .getElementById("detailMechanicsSection")
-    .classList.toggle(
-      "hidden",
-      !item.mechanics || (!item.mechanics.text && !item.mechanics.blocks)
-    );
+    .classList.toggle("hidden", !hasBlocks && !hasText);
 
   // Notes
   detailNotes.textContent = item.notes || "";
@@ -343,7 +412,8 @@ function showDetail(item) {
     .classList.toggle("hidden", !detailMetaGrid.childNodes.length);
 }
 
-// Handle tab changes
+// -------- Tab switching --------
+
 async function handleTabClick(sectionKey) {
   if (sectionKey === currentSectionKey) return;
 
@@ -367,7 +437,7 @@ async function handleTabClick(sectionKey) {
   applyFilters();
 }
 
-// Event listeners
+// -------- Event listeners --------
 
 navTabs.forEach((tab) => {
   tab.addEventListener("click", () => {
@@ -384,8 +454,16 @@ sourceFilter.addEventListener("change", () => {
   applyFilters();
 });
 
-// Init
+// -------- Init --------
+
 (async function init() {
+  // Preload talents to build the index for specialization talent trees
+  const talents = await loadSectionData("talents");
+  talentIndex = {};
+  talents.forEach((t) => {
+    if (t.id) talentIndex[t.id] = t;
+  });
+
   const items = await loadSectionData(currentSectionKey);
   currentItems = items;
   buildSourceFilter(items);
