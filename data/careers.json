@@ -4,7 +4,7 @@
     "name": "Smuggler",
     "subtitle": "Career template entry",
     "type": "Career",
-    "category": "Fringer / Scoundrel / etc.",
+    "category": "Fringer",
     "tags": ["career"],
     "source": {
       "book": "EotE Core Rulebook",
@@ -15,18 +15,19 @@
       "blocks": [
         {
           "label": "Career Skills",
-          "text": "List the career skills in your own words."
+          "text": "List the career skills here in your own words (e.g., Astrogation, Deception, Piloting (Space), etc.)."
         },
         {
           "label": "Specializations",
-          "text": "List the linked specializations here."
+          "text": "List the associated specializations by name."
         }
       ]
     },
     "notes": "",
     "meta": {
       "System": "Edge of the Empire",
-      "Role": "Scoundrel / Pilot / Face"
+      "Role": "Scoundrel / Pilot / Face",
+      "Career Skills": "Copy the skill list again here if you want it also in the Meta grid."
     }
   }
 ]
