@@ -1,23 +1,47 @@
 [
   {
-    "id": "human_placeholder",
-    "name": "Human (Placeholder)",
-    "subtitle": "Baseline Template Species",
+    "id": "bothan",
+    "name": "Bothan",
+    "subtitle": "Cunning information brokers",
     "type": "Species",
-    "tags": ["baseline", "versatile"],
+    "tags": ["species"],
     "source": {
-      "book": "Core Book (Your Choice)",
+      "book": "EotE Core Rulebook",
       "page": 0
     },
-    "summary": "Use this entry as a template when transcribing species rules from your books.",
+    "summary": "Short flavor description in your own words.",
     "mechanics": {
-      "text": "Paste the species' starting characteristics, XP, and abilities here in your own words from the book."
+      "blocks": [
+        {
+          "label": "Characteristics",
+          "text": "Br 2, Ag 2, Int 2, Cu 3, Wi 2, Pr 2"
+        },
+        {
+          "label": "Starting XP",
+          "text": "Write the starting XP value here."
+        },
+        {
+          "label": "Wound / Strain",
+          "text": "Wounds X, Strain Y."
+        },
+        {
+          "label": "Special Abilities",
+          "text": "List their special abilities in your own words."
+        }
+      ]
     },
-    "notes": "You own the rules; this site is just organizing what you typed in.",
+    "notes": "",
     "meta": {
+      "Br": 2,
+      "Ag": 2,
+      "Int": 2,
+      "Cu": 3,
+      "Wi": 2,
+      "Pr": 2,
       "Starting XP": "",
       "Wound Threshold": "",
-      "Strain Threshold": ""
+      "Strain Threshold": "",
+      "System": "Edge of the Empire"
     }
   }
 ]
