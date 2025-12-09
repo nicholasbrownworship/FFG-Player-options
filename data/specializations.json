@@ -11,17 +11,15 @@
       "page": 0
     },
     "summary": "Describe the specialization's flavor and niche.",
+    "talentGrid": [
+      ["toughened", "grit", null, null],
+      [null, "quick_draw", null, null],
+      [null, null, "rapid_reaction", null],
+      [null, null, null, "dodge"],
+      [null, null, null, null]
+    ],
     "mechanics": {
-      "blocks": [
-        {
-          "label": "Talent Tree (by row)",
-          "text": "Row 1: toughened, grit, —, —; Row 2: quick_draw, rapid_reaction, etc."
-        },
-        {
-          "label": "Key Talents",
-          "text": "List a few important talents and what they do in your words."
-        }
-      ]
+      "text": "You can still summarize the tree or key ideas here."
     },
     "notes": "",
     "meta": {
